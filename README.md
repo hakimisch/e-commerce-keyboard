@@ -3,4 +3,4 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 
 ##Live View the website!
-https://shopping-cart-two-gamma.vercel.app/
+https://e-commerce-keyboard.vercel.app/
