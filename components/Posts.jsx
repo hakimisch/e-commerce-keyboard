@@ -1,8 +1,6 @@
 import React from 'react';
 import PostsImg from './PostsImg';
-import PostImg1 from '../public/D60lite.jpg';
-import PostImg2 from '../public/gmk87.jpg';
-import PostImg3 from '../public/redragon-tl84.jpg';
+import PostImg1 from '../public/Sidebar.jpg';
 
 
 const Posts = () => {
@@ -22,7 +20,7 @@ const Posts = () => {
                     </div>
                 </div>
                 <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg duration-300">
-                    <PostsImg socialImg={PostImg2}/>
+                    <PostsImg socialImg={PostImg1}/>
                     <h2 className="text-2xl font-bold text-center py-8" >What mods is for you?</h2>
                     <p className="text-center text-4xl font-bold" ></p>
                     <div className="text-center font-medium" >
@@ -32,7 +30,7 @@ const Posts = () => {
                     </div>
                 </div>
                 <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg duration-300">
-                    <PostsImg socialImg={PostImg3}/>
+                    <PostsImg socialImg={PostImg1}/>
                     <h2 className="text-2xl font-bold text-center py-8" >Linear vs Tactile switches</h2>
                     <p className="text-center text-4xl font-bold" ></p>
                     <div className="text-center font-medium" >
@@ -42,7 +40,7 @@ const Posts = () => {
                     </div>
                 </div>
                 <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg duration-300">
-                    <PostsImg socialImg={PostImg3}/>
+                    <PostsImg socialImg={PostImg1}/>
                     <h2 className="text-2xl font-bold text-center py-8" >What keycap profile for typing?</h2>
                     <p className="text-center text-4xl font-bold" ></p>
                     <div className="text-center font-medium" >

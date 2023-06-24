@@ -1,8 +1,7 @@
-import Catalog from '@/components/Catalog'
-import Footer from '@/components/Footer'
-import Hero from '@/components/Hero'
-import Sidebar from '@/components/Sidebar'
-import React from 'react'
+import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
+import Sidebar from '@/components/Sidebar';
+import React from 'react';
 
 const shop = () => {
   return (
@@ -10,8 +9,6 @@ const shop = () => {
         <Hero heading='Main Catalog' message='Main catalog page'/>
         <div className='flex row-span-2 pt-24'>
           <Sidebar />
-          <Catalog />
-
         </div>
         <Footer />
     </div>
