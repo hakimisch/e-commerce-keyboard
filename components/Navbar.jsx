@@ -1,8 +1,11 @@
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import React, {useState, useEffect} from 'react';
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
+    const { status, data: session } = useSession();
     const [nav, setNav] = useState(false);
     const [color, setColor] = useState('transparent');
     const [textColor, setTextColor] = useState('white');
@@ -43,7 +46,15 @@ const Navbar = () => {
                     <Link href='/shop'>Build</Link>
                 </li>
                 <li className='py-4 px-6 hover:text-purple-500 duration-300'>
-                    <Link href='/account'>Account</Link>
+                    
+                       {status === 'loading' ? (
+                        'Loading'
+                       ) : session?.user ? (
+                        session.user.name
+                       ) : (
+                        <Link href='/account'>Account</Link>
+                       )}
+                    
                 </li>
             </ul>
             {/*Mobile Button*/}
