@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import {AiOutlineDoubleRight,AiOutlineClose} from 'react-icons/ai';
 
@@ -16,7 +15,7 @@ const Sidebar = () => {
         <ul className='hidden md:block'>
             <li>
               <button className='w-full left-0 text-center bg-purple-50 py-6 my-4 px-10 border-black border-y-2 border-r-2  hover:text-purple-800 hover:scale-105 hover:bg-purple-200 hover:border-purple-800 rounded-tr-full rounded-br-full duration-300'>
-                <Link href="/keyboards" className='font-extrabold text-2xl'>Keyboards</Link>
+                <Link href="/products" className='font-extrabold text-2xl'>Keyboards</Link>
               </button>
             </li>
             <li>

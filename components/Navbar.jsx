@@ -1,8 +1,12 @@
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import React, {useState, useEffect} from 'react';
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
 import 'react-toastify/dist/ReactToastify.css';
+import { Menu } from '@headlessui/react';
+import DropdownLink from './DropdownLink';
+import Cookies from 'js-cookie';
+
 
 const Navbar = () => {
     const { status, data: session } = useSession();
@@ -27,7 +31,10 @@ const Navbar = () => {
         window.addEventListener('scroll', changeColor);
     }, [])
 
-
+    const logoutClickHandler = () => {
+        Cookies.remove('cart');
+        signOut({ callbackUrl: '/account '});
+    }
 
   return (
     <div style={{backgroundColor: `${color}`}} className='fixed left-0 top-0 w-full z-10 ease-in duration-300' >
@@ -50,7 +57,32 @@ const Navbar = () => {
                        {status === 'loading' ? (
                         'Loading'
                        ) : session?.user ? (
-                        session.user.name
+                        <Menu as='div' className='relative inline-block'>
+                            <Menu.Button>
+                                {session.user.name}
+                            </Menu.Button>
+                            <Menu.Items className='absolute right-0 w-56 origin-top-right bg-white shadow-lg'>
+                                <Menu.Item>
+                                    <DropdownLink className="dropdown-link" href="/profile">
+                                        Profile
+                                    </DropdownLink>
+                                </Menu.Item>
+                                <Menu.Item>
+                                    <DropdownLink className="dropdown-link" href="/order-history">
+                                        Order History
+                                    </DropdownLink>
+                                </Menu.Item>
+                                <Menu.Item>
+                                    <a
+                                        className="dropdown-link"
+                                        href="#"
+                                        onClick={logoutClickHandler}
+                                    >
+                                       Logout 
+                                    </a>
+                                </Menu.Item>
+                            </Menu.Items>
+                        </Menu>
                        ) : (
                         <Link href='/account'>Account</Link>
                        )}
