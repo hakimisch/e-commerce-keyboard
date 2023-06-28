@@ -27,6 +27,10 @@ html {
   @apply rounded bg-gray-200 py-2 px-4 shadow outline-none hover:bg-slate-950 hover:text-white duration-300
 }
 
+.default-button {
+  @apply rounded bg-gray-200 py-2 px-4 text-black shadow outline-none hover:bg-purple-700 hover:text-white duration-300
+}
+
 .dropdown-link {
   @apply flex p-2 hover:bg-gray-200 text-black
 }
