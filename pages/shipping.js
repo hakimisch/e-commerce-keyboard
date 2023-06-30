@@ -24,12 +24,13 @@ export default function ShippingScreen() {
         setValue('address', shippingAddress.address);
         setValue('city', shippingAddress.city);
         setValue('postalCode', shippingAddress.postalCode);
+        setValue('country', shippingAddress.country)
     }, [setValue, shippingAddress]);
 
-    const submitHandler = ({ fullName, address, city, postalCode }) => {
+    const submitHandler = ({ fullName, address, city, postalCode, country }) => {
         dispatch({
             type: 'SAVE_SHIPPING_ADDRESS',
-            payload: { fullName, address, city, postalCode },
+            payload: { fullName, address, city, postalCode, country },
         });
         Cookies.set(
             'cart',
@@ -40,6 +41,7 @@ export default function ShippingScreen() {
                     address,
                     city,
                     postalCode,
+                    country,
                 },
             })
         );
@@ -100,10 +102,24 @@ export default function ShippingScreen() {
             id='postalCode'
             {...register('postalCode',  {
                 required: 'Please postal code',
+        
             })}/>
             {errors.postalCode && (
                 <div className='text-red-500'>{errors.postalCode.message}</div>
             )}
+        </div>
+        <div className="mb-4">
+          <label htmlFor="country">Country</label>
+          <input
+            className="w-full border p-2 rounded-md"
+            id="country"
+            {...register('country', {
+              required: 'Please enter country',
+            })}
+          />
+          {errors.country && (
+            <div className="text-red-500 ">{errors.country.message}</div>
+          )}
         </div>
         <div className='mb-4 flex justify-between'>
             <button className='primary-button'>Next</button>

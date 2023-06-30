@@ -20,6 +20,8 @@ export default NextAuth({
             return session;
         },
     },
+    secret: process.env.JWT_SECRET,
+
     providers: [
         CredentialsProvider({
             async authorize(credentials) {
