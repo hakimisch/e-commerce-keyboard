@@ -30,7 +30,7 @@ const Sidebar = () => {
             </li>
             <li>
               <button className='w-full left-0 text-center bg-purple-50 py-6 my-4 px-10 border-black border-y-2 border-r-2  hover:text-purple-800 hover:scale-105 hover:bg-purple-200 hover:border-purple-800 rounded-tr-full rounded-br-full duration-300'>
-                <Link href="/mod" className='font-extrabold text-2xl'>Sound Mods</Link>
+                <Link href="/mod" className='font-extrabold text-2xl '>Sound Mods</Link>
               </button>
             </li>
         </ul>
