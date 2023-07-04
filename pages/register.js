@@ -1,15 +1,16 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/no-unescaped-entities */
-import React, { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import Footer from '@/components/Footer'
+import Hero from '@/components/Hero'
 import { signIn, useSession } from 'next-auth/react';
-import { getError } from '@/utils/error';
-import { ToastContainer, toast } from 'react-toastify';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+import React, { useEffect } from 'react'
+import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import { getError } from '@/utils/error';
+import axios from 'axios';
 
-
-export default function LoginScreen() {
-
+export default function register() {
     const { data: session } = useSession();
     const router = useRouter();
     const {redirect} = router.query;
@@ -23,11 +24,17 @@ export default function LoginScreen() {
     const {
         handleSubmit,
         register,
+        getValues,
         formState: {errors},
     } = useForm();
 
-    const submitHandler = async ({email, password}) => {
+    const submitHandler = async ({name, email, password}) => {
         try {
+            await axios.post('api/auth/signup', {
+                name, 
+                email, 
+                password,
+            });
             const result = await signIn('credentials', {
                 redirect: false,
                 email,
@@ -40,9 +47,10 @@ export default function LoginScreen() {
             toast.error(getError(err));
         }
     };
-
   return (
     <div>
+        <Hero heading='Register Page' message=''/>
+        <div>
         <ToastContainer position='bottom-center' limit={1}/>
         <div className='bg-white justify-center flex items-center min-h-screen'>
             <div className=' bg-gray-100 flex min-h-screen backdrop:rounded-2xl shadow-lg w-[70%] p-5 rounded-3xl my-16'>
@@ -50,8 +58,15 @@ export default function LoginScreen() {
                     <h2 className='font-bold text-3xl text-black border-b py-4 border-gray-800 w-[95%]'>Login</h2>
 
                     <form action="" className='flex flex-col w-[95%] gap-4' onSubmit={handleSubmit(submitHandler)}>
+                        
+                        <input className='p-2 mt-8 rounded-xl border' type="text"
+                        {...register('name', {required: 'Please enter name', 
+                        message: 'Please enter name',
+                        })} 
+                        name='name' id="name" placeholder='Your Name'/>
+                        {errors.email && (<div className='text-red-500'>{errors.email.message}</div>)}
 
-                        <input className='p-2 mt-8 rounded-xl border' type="email"
+                        <input className='p-2 rounded-xl border' type="email"
                         {...register('email', {required: 'Please enter email', 
                         pattern: {value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-.]+.[a-zA-Z0-9-.]+$/i,
                         message: 'Please enter valid email',
@@ -69,12 +84,28 @@ export default function LoginScreen() {
                             <div className='text-red-500'>{errors.password.message}</div>
                         )}
 
-                        <button className='bg-purple-600 rounded-xl text-white py-3 hover:scale-105 duration-300 my-2'>Login</button>
+                        <input className='p-2 rounded-xl border w-full' type="password"
+                        {...register('confirmPassword', {
+                            required: 'Please enter confirm password',
+                            validate: (value) => value === getValues('password'),
+                            minLength: {value: 6, message: 'password is more than 5 chars'},
+                        })}
+                        name='confirmPassword' id='confirmPassword' placeholder='Confirm Password' />
+                        {errors.confirmPassword && (
+                            <div className='text-red-500'>{errors.confirmPassword.message}</div>
+                        )}
+                        {errors.confirmPassword && 
+                          errors.confirmPassword.type === 'validate' && (
+                            <div className='text-red-500'>Password do not match</div>
+                          )
+                        }
+
+                        <button className='bg-purple-600 rounded-xl text-white py-3 hover:scale-105 duration-300 my-2'>Register</button>
                     </form>
                     <p className='mt-5 text-xs border-b border-gray-400 py-4 w-[95%] hover:text-purple-600'>Forgot your password?</p>
                     <div className='mt-3 text-xs flex justify-between items-center w-[95%] hover:text-purple-600'>
                         <p>Don't have an account?</p>
-                        <Link className='border-2 p-2 rounded-md hover:scale-110 duration-300' href={`/register?redirect=${redirect || '/'}`}>Register</Link>
+                        <button className='py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300 hover:text-purple-600'>Register</button>
 
                     </div>
                 </div>
@@ -82,6 +113,9 @@ export default function LoginScreen() {
                 </div>
             </div>
         </div>  
+    </div>
+
+        <Footer />
     </div>
   )
 }
