@@ -9,7 +9,7 @@ export default function ProductItem ({product, addToCartHandler}) {
                 <img 
                 src={product.image}
                 alt={product.name}
-                className="rounded shadow"
+                className="rounded shadow object-cover h-64 w-full"
                 />   
         </Link>
 

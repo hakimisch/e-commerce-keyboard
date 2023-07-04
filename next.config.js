@@ -8,6 +8,7 @@ module.exports = {
     domains: [
       'images.unsplash.com',
       'i.pinimg.com',
+      'res.cloudinary.com',
     ]
   }
 }
