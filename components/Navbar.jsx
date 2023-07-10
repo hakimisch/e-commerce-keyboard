@@ -7,7 +7,6 @@ import { Menu } from '@headlessui/react';
 import DropdownLink from './DropdownLink';
 import Cookies from 'js-cookie';
 
-
 const Navbar = () => {
     const { status, data: session } = useSession();
     const [nav, setNav] = useState(false);
@@ -34,7 +33,7 @@ const Navbar = () => {
     const logoutClickHandler = () => {
         Cookies.remove('cart');
         signOut({ callbackUrl: '/account '});
-    }
+    };
 
   return (
     <div style={{backgroundColor: `${color}`}} className='fixed left-0 top-0 w-full z-10 ease-in duration-300' >

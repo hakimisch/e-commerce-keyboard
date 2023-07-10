@@ -8,6 +8,7 @@ import Product from '@/models/Product';
 import { Store } from '@/utils/Store';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import Filter from '@/components/Filter';
 
 export default function Products({products}) {
     const { state, dispatch } = useContext(Store);
@@ -30,7 +31,7 @@ export default function Products({products}) {
         <div>
             <Hero heading='Keyboards' message='Main catalog page'/>
             <div className='flex row-span-2 pt-24'>
-                <Sidebar/>
+                <Filter/>
                 <div className='grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 max-w-[85%] pl-4'>
                 {products.map((product) => (
                 <ProductItem 
