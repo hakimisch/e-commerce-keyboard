@@ -52,6 +52,9 @@ const Navbar = () => {
                     <Link href='/products'>Build</Link>
                 </li>
                 <li className='py-4 px-6 hover:text-purple-500 duration-300'>
+                    <Link href='/build'>Cart</Link>
+                </li>
+                <li className='py-4 px-6 hover:text-purple-500 duration-300'>
                     
                        {status === 'loading' ? (
                         'Loading'
@@ -113,10 +116,35 @@ const Navbar = () => {
                     <Link href='/#posts'>Guides</Link>
                 </li>
                 <li className='p-4 text-4xl hover:text-gray-500'>
-                    <Link href='/shop'>Builder</Link>
+                    <Link href='/products'>Builder</Link>
                 </li>
                 <li className='p-4 text-4xl hover:text-gray-500'>
-                    <Link href='/account'>Account</Link>
+                    <Link href='/build'>Cart</Link>
+                </li>
+                <li className='p-4 text-4xl hover:text-gray-500'>
+                {status === 'loading' ? (
+                        'Loading'
+                       ) : session?.user ? (
+                        <Menu as='div' className='relative inline-block'>
+                            <Menu.Button>
+                                {session.user.name}
+                            </Menu.Button>
+                            <Menu.Items className='flex bg-white shadow-lg'>
+                                <Menu.Item>
+                                    <a
+                                        className="dropdown-link"
+                                        href="#"
+                                        onClick={logoutClickHandler}
+                                    >
+                                       Logout 
+                                    </a>
+                                </Menu.Item>
+                            </Menu.Items>
+                        </Menu>
+                       ) : (
+                        <Link href='/account'>Account</Link>
+                       )}
+                    
                 </li>
             </ul>
             </div>
