@@ -2,7 +2,6 @@ import axios from 'axios';
 import Link from 'next/link';
 import React, { useEffect, useReducer } from 'react';
 import { toast } from 'react-toastify';
-
 import { getError } from '../../utils/error';
 import Hero from '@/components/Hero';
 
@@ -70,9 +69,9 @@ function AdminUsersScreen() {
 
   return (
     <div>
-        <Hero heading="Users Page" />
-        <div>
-        <div className="grid md:grid-cols-4 md:gap-5">
+      <Hero heading="Users"/>
+      <div>
+      <div className="grid md:grid-cols-4 md:gap-5">
         <div>
           <ul>
             <li>
@@ -143,8 +142,9 @@ function AdminUsersScreen() {
           )}
         </div>
       </div>
-        </div>
+      </div>
     </div>
+      
   );
 }
 
