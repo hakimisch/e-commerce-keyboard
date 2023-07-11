@@ -32,14 +32,14 @@ function CartScreen() {
   return (
     <div>
         <Hero heading="Your Build"/>
-        <h1 className='mb-4 text-xl'>Shopping Cart</h1>
+        <h1 className='mb-4 text-xl ml-10 font-semibold'>Shopping Cart</h1>
         {
             cartItems.length === 0 ?
-            ( <div>
+            ( <div className='ml-10'>
                 Cart is empty. <Link href='/products'>Pick parts</Link>
               </div>
               ) : (
-                <div className='grid md:grid-cols-4 md:gap-5'>
+                <div className='grid md:grid-cols-4 md:gap-5 ml-10'>
                     <div className='overflow-x-auto md:col-span-3'>
                         <table className='min-w-full'>
                             <thead className='border-b'>
@@ -75,7 +75,7 @@ function CartScreen() {
                                             </select>
                                             
                                         </td>
-                                        <td className='p-5 text-right'>${item.price}</td>
+                                        <td className='p-5 text-right'>RM{item.price}</td>
                                         <td className='p-5 text-center'>
                                             <button onClick={() => removeItemHandler(item)}>
                                                 <XCircleIcon className='h-5 w-5'></XCircleIcon>
@@ -86,13 +86,13 @@ function CartScreen() {
                             </tbody>
                         </table>
                     </div>
-                    <div className='card p-5'>
+                    <div className='card p-5 mr-6'>
                         <ul>
                             <li>
                                 <div className='pb-3 text-xl'>
                                     Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)})
                                     {''}
-                                    : $
+                                    : RM
                                     {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
                                 </div>
                             </li>

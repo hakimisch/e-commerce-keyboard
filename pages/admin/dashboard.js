@@ -78,24 +78,24 @@ function AdminDashboardScreen() {
   };
   return (
     <div>
-        <Hero title="Admin Dashboard"/>
+        <Hero heading="Admin Dashboard"/>
         <div>
         <div className="grid  md:grid-cols-4 md:gap-5">
-        <div>
+        <div className='ml-6 max-w-[80%]'>
           <ul>
-            <li>
-              <Link href="/admin/dashboard" className="font-bold">
+            <li className='py-4 hover:text-purple-800'>
+              <Link href="/admin/dashboard" className="font-bold text-2xl">
                 Dashboard
               </Link>
             </li>
-            <li>
-              <Link href="/admin/orders">Orders</Link>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/orders">Orders</Link>
             </li>
-            <li>
-              <Link href="/admin/products">Products</Link>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/products">Products</Link>
             </li>
-            <li>
-              <Link href="/admin/users">Users</Link>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/users">Users</Link>
             </li>
           </ul>
         </div>
@@ -108,22 +108,22 @@ function AdminDashboardScreen() {
           ) : (
             <div>
               <div className="grid grid-cols-1 md:grid-cols-4">
-                <div className="card m-5 p-5">
-                  <p className="text-3xl">${summary.ordersPrice} </p>
+                <div className="card m-5 p-5 hover:scale-105">
+                  <p className="text-3xl">RM{summary.ordersPrice} </p>
                   <p>Sales</p>
                   <Link href="/admin/orders">View sales</Link>
                 </div>
-                <div className="card m-5 p-5">
+                <div className="card m-5 p-5 hover:scale-105">
                   <p className="text-3xl">{summary.ordersCount} </p>
                   <p>Orders</p>
                   <Link href="/admin/orders">View orders</Link>
                 </div>
-                <div className="card m-5 p-5">
+                <div className="card m-5 p-5 hover:scale-105">
                   <p className="text-3xl">{summary.productsCount} </p>
                   <p>Products</p>
                   <Link href="/admin/products">View products</Link>
                 </div>
-                <div className="card m-5 p-5">
+                <div className="card m-5 p-5 hover:scale-105">
                   <p className="text-3xl">{summary.usersCount} </p>
                   <p>Users</p>
                   <Link href="/admin/users">View users</Link>
@@ -131,6 +131,7 @@ function AdminDashboardScreen() {
               </div>
               <h2 className="text-xl">Sales Report</h2>
               <Bar
+                className='mr-16'
                 options={{
                   legend: { display: true, position: 'right' },
                 }}

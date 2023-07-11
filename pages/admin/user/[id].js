@@ -88,21 +88,21 @@ function AdminUserEdit() {
       <Hero heading="User edit page" />
       <div>
       <div className="grid md:grid-cols-4 md:gap-5">
-        <div>
+      <div className='ml-6 max-w-[80%]'>
           <ul>
-            <li>
-              <Link href="/admin/dashboard">Dashboard</Link>
-            </li>
-            <li>
-              <Link href="/admin/orders">Orders</Link>
-            </li>
-            <li>
-              <Link href="/admin/users">Products</Link>
-            </li>
-            <li>
-              <Link href="/admin/users" className="font-bold">
-                Users
+            <li className='py-3 text-xl hover:text-purple-800'>
+              <Link href="/admin/dashboard" className="p-2">
+                Dashboard
               </Link>
+            </li>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/orders">Orders</Link>
+            </li>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/products">Products</Link>
+            </li>
+            <li className='py-4 text-xl hover:text-purple-700'>
+              <Link className='p-2 font-bold text-2xl' href="/admin/users">Users</Link>
             </li>
           </ul>
         </div>
@@ -151,7 +151,7 @@ function AdminUserEdit() {
                 </button>
               </div>
               <div className="mb-4">
-                <Link href={`/admin/users`}>Back</Link>
+                <Link className='border-2 px-3 py-2 rounded-md hover:bg-purple-700 hover:text-white hover:scale-110 duration-300' href={`/admin/users`}>Back</Link>
               </div>
             </form>
           )}

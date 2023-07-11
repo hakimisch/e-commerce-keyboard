@@ -65,14 +65,14 @@ export default function PlaceOrderScreen() {
     <div>
         <Hero heading="Place Order"/>
         <CheckoutWizard activeStep={3} />
-        <h1 className='mb-4 text-xl'>Place Order</h1>
+        <h1 className='mb-4 text-xl font-bold ml-10'>Place Order</h1>
         {cartItems.length === 0 ? (
-        <div>
+        <div className='ml-6'>
           Cart is empty. <Link href="/">Go shopping</Link>
         </div>
         ) :
         (
-            <div className="grid md:grid-cols-4 md:gap-5">
+            <div className="grid md:grid-cols-4 md:gap-5 ml-10">
             <div className="overflow-x-auto md:col-span-3">
               <div className="card  p-5">
                 <h2 className="mb-2 text-lg">Shipping Address</h2>
@@ -123,45 +123,45 @@ export default function PlaceOrderScreen() {
                           </Link>
                         </td>
                         <td className=" p-5 text-right">{item.quantity}</td>
-                        <td className="p-5 text-right">${item.price}</td>
+                        <td className="p-5 text-right">RM{item.price}</td>
                         <td className="p-5 text-right">
-                          ${item.quantity * item.price}
+                          RM{item.quantity * item.price}
                         </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
-                <div>
-                  <Link href="/build">Edit</Link>
+                <div className='my-3'>
+                  <Link className='border px-4 py-3 hover:bg-purple-700 hover:text-white duration-200 rounded-xl' href="/build">Edit</Link>
                 </div>
               </div>
             </div>
             <div>
-              <div className="card  p-5">
+              <div className="card p-5 mr-10">
                 <h2 className="mb-2 text-lg">Order Summary</h2>
                 <ul>
                   <li>
                     <div className="mb-2 flex justify-between">
                       <div>Items</div>
-                      <div>${itemsPrice}</div>
+                      <div>RM{itemsPrice}</div>
                     </div>
                   </li>
                   <li>
                     <div className="mb-2 flex justify-between">
                       <div>Tax</div>
-                      <div>${taxPrice}</div>
+                      <div>RM{taxPrice}</div>
                     </div>
                   </li>
                   <li>
                     <div className="mb-2 flex justify-between">
                       <div>Shipping</div>
-                      <div>${shippingPrice}</div>
+                      <div>RM{shippingPrice}</div>
                     </div>
                   </li>
                   <li>
                     <div className="mb-2 flex justify-between">
                       <div>Total</div>
-                      <div>${totalPrice}</div>
+                      <div>RM{totalPrice}</div>
                     </div>
                   </li>
                   <li>

@@ -39,28 +39,28 @@ export default function AdminOrderScreen() {
 
   return (
     <div>
-        <Hero heading="Admin Dashboard"/>
+        <Hero heading="Admin Order"/>
         <div>
         <div className="grid md:grid-cols-4 md:gap-5">
-        <div>
+        <div className='ml-6 max-w-[80%]'>
           <ul>
-            <li>
-              <Link href="/admin/dashboard">Dashboard</Link>
-            </li>
-            <li>
-              <Link href="/admin/orders" className="font-bold">
-                Orders
+            <li className='py-3 text-xl hover:text-purple-800'>
+              <Link href="/admin/dashboard" className="p-2">
+                Dashboard
               </Link>
             </li>
-            <li>
-              <Link href="/admin/products">Products</Link>
+            <li className='py-4 text-xl hover:text-purple-700'>
+              <Link className='p-2 font-bold text-2xl' href="/admin/orders">Orders</Link>
             </li>
-            <li>
-              <Link href="/admin/users">Users</Link>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/products">Products</Link>
+            </li>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/users">Users</Link>
             </li>
           </ul>
         </div>
-        <div className="overflow-x-auto md:col-span-3">
+        <div className="overflow-x-auto md:col-span-3 mr-16">
           <h1 className="mb-4 text-xl">Admin Orders</h1>
 
           {loading ? (
@@ -91,7 +91,7 @@ export default function AdminOrderScreen() {
                       <td className="p-5">
                         {order.createdAt.substring(0, 10)}
                       </td>
-                      <td className="p-5">${order.totalPrice}</td>
+                      <td className="p-5">RM{order.totalPrice}</td>
                       <td className="p-5">
                         {order.isPaid
                           ? `${order.paidAt.substring(0, 10)}`

@@ -69,28 +69,28 @@ function AdminUsersScreen() {
 
   return (
     <div>
-      <Hero heading="Users"/>
+      <Hero heading="Admin Users"/>
       <div>
       <div className="grid md:grid-cols-4 md:gap-5">
-        <div>
+      <div className='ml-6 max-w-[80%]'>
           <ul>
-            <li>
-              <Link href="/admin/dashboard">Dashboard</Link>
-            </li>
-            <li>
-              <Link href="/admin/orders">Orders</Link>
-            </li>
-            <li>
-              <Link href="/admin/products">Products</Link>
-            </li>
-            <li>
-              <Link href="/admin/users" className="font-bold">
-                Users
+            <li className='py-3 text-xl hover:text-purple-800'>
+              <Link href="/admin/dashboard" className="p-2">
+                Dashboard
               </Link>
+            </li>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/orders">Orders</Link>
+            </li>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/products">Products</Link>
+            </li>
+            <li className='py-4 text-xl hover:text-purple-700'>
+              <Link className='p-2 font-bold text-2xl' href="/admin/users">Users</Link>
             </li>
           </ul>
         </div>
-        <div className="overflow-x-auto md:col-span-3">
+        <div className="overflow-x-auto md:col-span-3 mr-16">
           <h1 className="mb-4 text-xl">Users</h1>
           {loadingDelete && <div>Deleting...</div>}
           {loading ? (

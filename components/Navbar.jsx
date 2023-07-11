@@ -39,7 +39,7 @@ const Navbar = () => {
     <div style={{backgroundColor: `${color}`}} className='fixed left-0 top-0 w-full z-10 ease-in duration-300' >
         <div className='max-w-[1280px] m-auto flex justify-between items-center p-4 text-white'>
             <Link href='/'>
-                <h1 style={{color: `${textColor}`}} className='text-4xl font-extrabold'>Misch</h1>
+                <h1 style={{color: `${textColor}`}} className='text-4xl font-extrabold'>Misch.co</h1>
             </Link>
             <ul style={{color: `${textColor}`}} className='hidden sm:flex'>
                 <li className='py-4 px-6 hover:text-purple-500 duration-300'>
@@ -49,7 +49,7 @@ const Navbar = () => {
                     <Link href='/#posts'>Guides</Link>
                 </li>
                 <li className='py-4 px-6 hover:text-purple-500 duration-300'>
-                    <Link href='/shop'>Build</Link>
+                    <Link href='/products'>Build</Link>
                 </li>
                 <li className='py-4 px-6 hover:text-purple-500 duration-300'>
                     

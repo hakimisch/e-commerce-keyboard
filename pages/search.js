@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { toast } from 'react-toastify';
-
 import { Store } from '../utils/Store';
 import { XCircleIcon } from '@heroicons/react/outline';
 import ProductItem from '../components/ProductItem';
@@ -14,15 +13,15 @@ const PAGE_SIZE = 2;
 
 const prices = [
   {
-    name: '$1 to $50',
+    name: 'RM1 to RM50',
     value: '1-50',
   },
   {
-    name: '$51 to $200',
+    name: 'RM51 to RM200',
     value: '51-200',
   },
   {
-    name: '$201 to $1000',
+    name: 'RM201 to RM1000',
     value: '201-1000',
   },
 ];

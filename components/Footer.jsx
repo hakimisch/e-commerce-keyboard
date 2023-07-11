@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
     return (
-        <div className="w-full bg-slate-950 ">
+        <div className="w-full bg-slate-950 mt-12 ">
             <div className="max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300">
             <div>
                 <h1 className='w-full text-3xl font-bold text-[cyan]'>Misch</h1>

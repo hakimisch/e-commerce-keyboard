@@ -20,7 +20,7 @@ const Slider = ({slides}) => {
     }
 
   return (
-    <div id='gallery' className='max-w-[1240px] mx-auto py-12'>
+    <div id='gallery' className='max-w-[1240px] mx-auto pb-12'>
         <h1 className='text-2xl font-bold text-center p-4'>Gallery</h1>
         <div className='relative flex justify-center items-center p-4'>
         <div className='max-w-[640px] max-h-[480px]'>

@@ -85,6 +85,9 @@ function OrderHistoryScreen() {
         </div>
       )}
         </div>
+        <div className="mb-4">
+          <Link className='border-2 ml-2 px-3 py-2 hover:scale-110 hover:bg-purple-700 hover:text-white duration-300 rounded-md' href={`/`}>Back</Link>
+        </div>
     </div>
   );
 }

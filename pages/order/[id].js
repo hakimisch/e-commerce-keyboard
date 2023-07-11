@@ -172,13 +172,13 @@ function OrderScreen() {
     <div>
         <Hero heading={`Order ${orderId}`}/>
         <div>
-        <h1 className="mb-4 text-xl">{`Order ${orderId}`}</h1>
+        <h1 className="mb-4 text-xl ml-10">{`Order ${orderId}`}</h1>
       {loading ? (
         <div>Loading...</div>
       ) : error ? (
-        <div className="alert-error">{error}</div>
+        <div className="alert-error ml-10">{error}</div>
       ) : (
-        <div className="grid md:grid-cols-4 md:gap-5">
+        <div className="grid md:grid-cols-4 md:gap-5 ml-10">
           <div className="overflow-x-auto md:col-span-3">
             <div className="card  p-5">
               <h2 className="mb-2 text-lg">Shipping Address</h2>
@@ -237,9 +237,9 @@ function OrderScreen() {
                           </Link>
                       </td>
                       <td className=" p-5 text-right">{item.quantity}</td>
-                      <td className="p-5 text-right">${item.price}</td>
+                      <td className="p-5 text-right">RM{item.price}</td>
                       <td className="p-5 text-right">
-                        ${item.quantity * item.price}
+                        RM{item.quantity * item.price}
                       </td>
                     </tr>
                   ))}
@@ -248,31 +248,31 @@ function OrderScreen() {
             </div>
           </div>
           <div>
-            <div className="card  p-5">
+            <div className="card p-5 mr-10">
               <h2 className="mb-2 text-lg">Order Summary</h2>
               <ul>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Items</div>
-                    <div>${itemsPrice}</div>
+                    <div>RM{itemsPrice}</div>
                   </div>
                 </li>{' '}
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Tax</div>
-                    <div>${taxPrice}</div>
+                    <div>RM{taxPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Shipping</div>
-                    <div>${shippingPrice}</div>
+                    <div>RM{shippingPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Total</div>
-                    <div>${totalPrice}</div>
+                    <div>RM{totalPrice}</div>
                   </div>
                 </li>
                 {!isPaid && (

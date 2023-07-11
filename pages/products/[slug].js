@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Hero from '@/components/Hero'
 import Product from '@/models/Product';
 import { Store } from '@/utils/Store';
@@ -36,11 +37,11 @@ export default function ProductScreen(props) {
   return (
     <div>
         <Hero heading={product.name}/>
-        <div className='py-2'>
-            <Link href="/products">back to products</Link>
+        <div className='py-2 mb-10'>
+            <Link className='px-4 py-2 text-xl rounded-xl border-2 ml-6 hover:bg-purple-700 hover:text-white duration-200' href="/products">Back to products</Link>
         </div>
         <div className='grid md:grid-cols-4 md:gap-3'>
-            <div className='md:col-span-2'>
+            <div className='md:col-span-2 ml-6'>
                 <Image 
                 src={product.image}
                 alt={product.name}
@@ -51,7 +52,7 @@ export default function ProductScreen(props) {
             <div>
                 <ul>
                     <li>
-                        <h1 className='text-lg'>{product.name}</h1>
+                        <h1 className='text-2xl font-bold'>{product.name}</h1>
                     </li>
                     <li>
                         Category: {product.category}
@@ -68,10 +69,10 @@ export default function ProductScreen(props) {
                 </ul>
             </div>
             <div>
-                <div className='card p-5'>
+                <div className='card p-5 mr-6 ml-4'>
                     <div className='mb-2 flex justify-between'>
                         <div>Price</div>
-                        <div>${product.price}</div>
+                        <div>RM{product.price}</div>
                     </div>
                     <div className='mb-2 flex justify-between'>
                         <div>Status</div>
@@ -81,6 +82,7 @@ export default function ProductScreen(props) {
                 </div>
             </div>
         </div>
+        <Footer/>
     </div>
     
     

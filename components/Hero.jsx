@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 const Hero = ({heading, message}) => {
   return (
     <div>
-      <div className='flex items-center justify-center h-[17rem] bg-fixed bg-bottom bg-cover custom-img'>
+      <div className='flex items-center justify-center h-[17rem] bg-fixed bg-bottom bg-cover custom-img mb-16'>
         {/*Overlay*/}
         <div className='absolute top-0 left-0 right-0 h-[17rem] bg-black/70 z-[2]'/>
         <div className='p-5 text-white z-[2]'>

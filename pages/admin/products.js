@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -97,25 +98,25 @@ export default function AdminProdcutsScreen() {
         <Hero heading="Admin Products"/>
         <div>
         <div className="grid md:grid-cols-4 md:gap-5">
-        <div>
+        <div className='ml-6 max-w-[80%]'>
           <ul>
-            <li>
-              <Link href="/admin/dashboard">Dashboard</Link>
-            </li>
-            <li>
-              <Link href="/admin/orders">Orders</Link>
-            </li>
-            <li>
-              <Link href="/admin/products" className="font-bold">
-                Products
+            <li className='py-3 text-xl hover:text-purple-800'>
+              <Link href="/admin/dashboard" className="p-2">
+                Dashboard
               </Link>
             </li>
-            <li>
-              <Link href="/admin/users">Users</Link>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/orders">Orders</Link>
+            </li>
+            <li className='py-4 text-xl hover:text-purple-700'>
+              <Link className='p-2 font-bold text-2xl' href="/admin/products">Products</Link>
+            </li>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/users">Users</Link>
             </li>
           </ul>
         </div>
-        <div className="overflow-x-auto md:col-span-3">
+        <div className="overflow-x-auto md:col-span-3 mr-16">
         <div className="flex justify-between">
             <h1 className="mb-4 text-xl">Products</h1>
             {loadingDelete && <div>Deleting item...</div>}
@@ -137,6 +138,7 @@ export default function AdminProdcutsScreen() {
                 <thead className="border-b">
                   <tr>
                     <th className="px-5 text-left">ID</th>
+                    <th className="px-5 text-left">IMAGE</th>
                     <th className="p-5 text-left">NAME</th>
                     <th className="p-5 text-left">PRICE</th>
                     <th className="p-5 text-left">CATEGORY</th>
@@ -149,8 +151,15 @@ export default function AdminProdcutsScreen() {
                   {products.map((product) => (
                     <tr key={product._id} className="border-b">
                       <td className=" p-5 ">{product._id.substring(20, 24)}</td>
+                      <td className=" p-5 ">
+                        <img 
+                      src={product.image} 
+                      alt={product.name}
+                      width={50}
+                      height={50}
+                      /></td>
                       <td className=" p-5 ">{product.name}</td>
-                      <td className=" p-5 ">${product.price}</td>
+                      <td className=" p-5 ">RM{product.price}</td>
                       <td className=" p-5 ">{product.category}</td>
                       <td className=" p-5 ">{product.countInStock}</td>
                       <td className=" p-5 ">{product.rating}</td>

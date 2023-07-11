@@ -138,25 +138,25 @@ export default function AdminProductEditScreen() {
         <Hero heading={`Edit Product ${productId}`}/>
         <div>
         <div className="grid md:grid-cols-4 md:gap-5">
-        <div>
+        <div className='ml-6 max-w-[80%]'>
           <ul>
-            <li>
-              <Link href="/admin/dashboard">Dashboard</Link>
-            </li>
-            <li>
-              <Link href="/admin/orders">Orders</Link>
-            </li>
-            <li>
-              <Link href="/admin/products" className="font-bold">
-                Products
+            <li className='py-3 text-xl hover:text-purple-800'>
+              <Link href="/admin/dashboard" className="p-2">
+                Dashboard
               </Link>
             </li>
-            <li>
-              <Link href="/admin/users">Users</Link>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/orders">Orders</Link>
+            </li>
+            <li className='py-4 text-xl hover:text-purple-700'>
+              <Link className='p-2 font-bold text-2xl' href="/admin/products">Products</Link>
+            </li>
+            <li className='py-3 text-xl hover:text-purple-700'>
+              <Link className='p-2' href="/admin/users">Users</Link>
             </li>
           </ul>
         </div>
-        <div className="md:col-span-3">
+        <div className="md:col-span-3 mb-16">
           {loading ? (
             <div>Loading...</div>
           ) : error ? (
@@ -301,7 +301,7 @@ export default function AdminProductEditScreen() {
                 </button>
               </div>
               <div className="mb-4">
-                <Link href={`/admin/products`}>Back</Link>
+                <Link className='border-2 ml-2 px-3 py-2 hover:scale-110 hover:bg-purple-700 hover:text-white duration-300 rounded-md' href={`/admin/products`}>Back</Link>
               </div>
             </form>
           )}

@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { getError } from '../utils/error';
 import axios from 'axios';
 import Hero from '@/components/Hero';
+import Link from 'next/link';
 
 export default function ProfileScreen() {
   const { data: session } = useSession();
@@ -131,6 +132,7 @@ export default function ProfileScreen() {
         </div>
         <div className="mb-4">
           <button className="primary-button">Update Profile</button>
+          <Link className='border-2 ml-2 px-3 py-2 hover:scale-110 hover:bg-purple-700 hover:text-white duration-300 rounded-md' href={`/products`}>Back</Link>
         </div>
       </form>
         </div>
