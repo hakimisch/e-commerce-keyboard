@@ -8,6 +8,7 @@ import ProductItem from '../components/ProductItem';
 import Product from '../models/Product';
 import db from '../utils/db';
 import Hero from '@/components/Hero';
+import Footer from '@/components/Footer';
 
 const PAGE_SIZE = 2;
 
@@ -105,7 +106,7 @@ export default function Search(props) {
     <div>
         <Hero heading="Search Page"/>
         <div>
-        <div className="grid md:grid-cols-4 md:gap-5">
+        <div className="grid mx-6 md:grid-cols-4 md:gap-5">
         <div>
           <div className="my-3">
             <h2>Categories</h2>
@@ -219,7 +220,8 @@ export default function Search(props) {
           </div>
         </div>
       </div>
-        </div>
+    </div>
+    <Footer/>
     </div>
 
   );
