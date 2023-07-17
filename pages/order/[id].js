@@ -170,15 +170,15 @@ function OrderScreen() {
 
   return (
     <div>
-        <Hero heading={`Order ${orderId}`}/>
+        <Hero heading={`Your Order`}/>
         <div>
-        <h1 className="mb-4 text-xl ml-10">{`Order ${orderId}`}</h1>
+        <h1 className="mb-4 text-xl ml-10">{`Order Summary`}</h1>
       {loading ? (
         <div>Loading...</div>
       ) : error ? (
         <div className="alert-error ml-10">{error}</div>
       ) : (
-        <div className="grid md:grid-cols-4 md:gap-5 ml-10">
+        <div className="grid md:grid-cols-4 md:gap-5 md:ml-10 ml-8 mr-6 md:mr-0">
           <div className="overflow-x-auto md:col-span-3">
             <div className="card  p-5">
               <h2 className="mb-2 text-lg">Shipping Address</h2>

@@ -39,7 +39,7 @@ export default function PaymentScreen() {
     <div>
         <Hero heading="Payment Method"/>
         <CheckoutWizard activeStep={2} />
-        <form className='mx-auto max-w-screen-md' onSubmit={submitHandler}>
+        <form className='mx-6 md:mx-auto max-w-screen-md' onSubmit={submitHandler}>
             <h1 className='mb-4 text-xl'>Payment Method</h1>
             {
                 ['Paypal','CashOnDelivery'].map((payment) => (

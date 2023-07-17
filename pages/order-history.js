@@ -39,17 +39,17 @@ function OrderHistoryScreen() {
     <div>
         <Hero heading="Order History"/>
         <div>
-        <h1 className="mb-4 text-xl">Order History</h1>
+        <h1 className="mb-4 text-xl pl-10">Order History</h1>
       {loading ? (
         <div>Loading...</div>
       ) : error ? (
         <div className="alert-error">{error}</div>
       ) : (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto px-10">
           <table className="min-w-full">
             <thead className="border-b">
               <tr>
-                <th className="px-5 text-left">ID</th>
+                <th className="px-5 text-left">ORDER NO.</th>
                 <th className="p-5 text-left">DATE</th>
                 <th className="p-5 text-left">TOTAL</th>
                 <th className="p-5 text-left">PAID</th>
@@ -74,7 +74,7 @@ function OrderHistoryScreen() {
                       : 'not delivered'}
                   </td>
                   <td className=" p-5 ">
-                    <Link href={`/order/${order._id}`} passHref>
+                    <Link className='hover:text-purple-700' href={`/order/${order._id}`} passHref>
                     Details
                     </Link>
                   </td>
@@ -85,7 +85,7 @@ function OrderHistoryScreen() {
         </div>
       )}
         </div>
-        <div className="mb-4">
+        <div className="mb-4 mt-4 pl-10">
           <Link className='border-2 ml-2 px-3 py-2 hover:scale-110 hover:bg-purple-700 hover:text-white duration-300 rounded-md' href={`/`}>Back</Link>
         </div>
     </div>

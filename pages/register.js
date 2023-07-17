@@ -102,12 +102,6 @@ export default function register() {
 
                         <button className='bg-purple-600 rounded-xl text-white py-3 hover:scale-105 duration-300 my-2'>Register</button>
                     </form>
-                    <p className='mt-5 text-xs border-b border-gray-400 py-4 w-[95%] hover:text-purple-600'>Forgot your password?</p>
-                    <div className='mt-3 text-xs flex justify-between items-center w-[95%] hover:text-purple-600'>
-                        <p>Don't have an account?</p>
-                        <button className='py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300 hover:text-purple-600'>Register</button>
-
-                    </div>
                 </div>
                 <div className='md:block hidden w-1/2 custom-img2 rounded-3xl'>               
                 </div>

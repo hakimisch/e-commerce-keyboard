@@ -31,7 +31,7 @@ export default function Products({products}) {
             <Hero heading='Products' message='Main catalog page'/>
             <div className='flex row-span-2'>
                 <Filter/>
-                <div className='grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 max-w-[85%] pl-4'>
+                <div className='grid grid-cols-1 ml-6 gap-4 md:grid-cols-3 lg:grid-cols-4 max-w-[85%] px-4'>
                 {products.map((product) => (
                 <ProductItem 
                 product={product} 

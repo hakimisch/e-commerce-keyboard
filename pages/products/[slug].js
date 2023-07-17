@@ -40,7 +40,7 @@ export default function ProductScreen(props) {
         <div className='py-2 mb-10'>
             <Link className='px-4 py-2 text-xl rounded-xl border-2 ml-6 hover:bg-purple-700 hover:text-white duration-200' href="/products">Back to products</Link>
         </div>
-        <div className='grid md:grid-cols-4 md:gap-3'>
+        <div className='grid pr-6 pl-4 md:grid-cols-4 md:gap-3'>
             <div className='md:col-span-2 ml-6'>
                 <Image 
                 src={product.image}

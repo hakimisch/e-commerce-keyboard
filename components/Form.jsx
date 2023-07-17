@@ -71,7 +71,6 @@ export default function LoginScreen() {
 
                         <button className='bg-purple-600 rounded-xl text-white py-3 hover:scale-105 duration-300 my-2'>Login</button>
                     </form>
-                    <p className='mt-5 text-xs border-b border-gray-400 py-4 w-[95%] hover:text-purple-600'>Forgot your password?</p>
                     <div className='mt-3 text-xs flex justify-between items-center w-[95%] hover:text-purple-600'>
                         <p>Don't have an account?</p>
                         <Link className='border-2 p-2 rounded-md hover:scale-110 duration-300' href={`/register?redirect=${redirect || '/'}`}>Register</Link>

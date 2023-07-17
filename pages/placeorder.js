@@ -65,14 +65,14 @@ export default function PlaceOrderScreen() {
     <div>
         <Hero heading="Place Order"/>
         <CheckoutWizard activeStep={3} />
-        <h1 className='mb-4 text-xl font-bold ml-10'>Place Order</h1>
+        <h1 className='mb-4 text-xl font-bold ml-8 md:ml-10 mr-6'>Place Order</h1>
         {cartItems.length === 0 ? (
         <div className='ml-6'>
           Cart is empty. <Link href="/">Go shopping</Link>
         </div>
         ) :
         (
-            <div className="grid md:grid-cols-4 md:gap-5 ml-10">
+            <div className="grid md:grid-cols-4 md:gap-5 ml-8 md:ml-10 mr-6">
             <div className="overflow-x-auto md:col-span-3">
               <div className="card  p-5">
                 <h2 className="mb-2 text-lg">Shipping Address</h2>
@@ -137,7 +137,7 @@ export default function PlaceOrderScreen() {
               </div>
             </div>
             <div>
-              <div className="card p-5 mr-10">
+              <div className="card p-5 mr-6 md:mr-0">
                 <h2 className="mb-2 text-lg">Order Summary</h2>
                 <ul>
                   <li>
