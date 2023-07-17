@@ -135,7 +135,7 @@ export default function AdminProductEditScreen() {
 
   return (
     <div>
-        <Hero heading={`Edit Product ${productId}`}/>
+        <Hero heading={`Edit Product`}/>
         <div>
         <div className="grid md:grid-cols-4 md:gap-5">
         <div className='ml-6 max-w-[80%]'>
@@ -166,7 +166,7 @@ export default function AdminProductEditScreen() {
               className="mx-auto max-w-screen-md"
               onSubmit={handleSubmit(submitHandler)}
             >
-              <h1 className="mb-4 text-xl">{`Edit Product ${productId}`}</h1>
+              <h1 className="mb-4 text-xl">{`Edit Product`}</h1>
               <div className="mb-4">
                 <label htmlFor="name">Name</label>
                 <input

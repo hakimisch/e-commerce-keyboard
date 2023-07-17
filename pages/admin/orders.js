@@ -102,7 +102,7 @@ export default function AdminOrderScreen() {
                           ? `${order.deliveredAt.substring(0, 10)}`
                           : 'not delivered'}
                       </td>
-                      <td className="p-5">
+                      <td className="p-5 hover:text-purple-700">
                         <Link href={`/order/${order._id}`} passHref>
                           Details
                         </Link>
