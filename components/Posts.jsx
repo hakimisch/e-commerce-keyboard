@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import PostsImg from './PostsImg';
-import PostImg1 from '../public/Sidebar.jpg';
-
+import PostImg1 from '../public/Case.jpg';
+import PostImg2 from '../public/Mod.jpg';
+import PostImg3 from '../public/Switches.jpg';
+import PostImg4 from '../public/Keycap.jpg';
 
 const Posts = () => {
   return (
@@ -23,7 +25,7 @@ const Posts = () => {
                     </div>
                 </div>
                 <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg duration-300">
-                    <PostsImg socialImg={PostImg1}/>
+                    <PostsImg socialImg={PostImg2}/>
                     <h2 className="text-2xl font-bold text-center py-8" >What mods is for you?</h2>
                     <div className="text-center font-medium" >
                         <p className="py-2 border-b mx-8 mt-8">
@@ -32,7 +34,7 @@ const Posts = () => {
                     </div>
                 </div>
                 <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg duration-300">
-                    <PostsImg socialImg={PostImg1}/>
+                    <PostsImg socialImg={PostImg3}/>
                     <h2 className="text-2xl font-bold text-center py-8" >Type of switches</h2>
                     <div className="text-center font-medium" >
                         <p className="py-2 border-b mx-8 mt-8">
@@ -41,7 +43,7 @@ const Posts = () => {
                     </div>
                 </div>
                 <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg duration-300">
-                    <PostsImg socialImg={PostImg1}/>
+                    <PostsImg socialImg={PostImg4}/>
                     <h2 className="text-2xl font-bold text-center py-8" >What keycap profile is for you?</h2>
                     <div className="text-center font-medium" >
                         <p className="py-2 border-b mx-8 mt-8">
